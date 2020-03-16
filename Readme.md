@@ -1,8 +1,8 @@
 ## HEXAPOD
 
-(For Internal Use Only)
+*(For Internal Use Only)
 
-This folder contains\
+This folder contains
 
 ├── body  
 │   ├── hexapod.urdf  
