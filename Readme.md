@@ -1,8 +1,9 @@
-# heading1 **HEXAPOD**
+## HEXAPOD
 
-(For Internal Use Only)\
+(For Internal Use Only)
 
 This folder contains\
+`Inline code`
 Hexapod\
 |_body\
   |_ new_parts5 -> BOdy meshes for hexapod\
