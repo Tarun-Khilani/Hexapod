@@ -5,9 +5,9 @@
 This folder contains\
 Hexapod\
 |_body\
-  |_ new_parts5 -> BOdy meshes for hexapod\
-  |_ hexapod.urdf -> URDF file for hexapod\
-  |_ urdf-viz -> tool to visualize urdf files (binary file for linux)\
+  |_new_parts5 -> BOdy meshes for hexapod\
+  |_hexapod.urdf -> URDF file for hexapod\
+  |_urdf-viz -> tool to visualize urdf files (binary file for linux)\
 |_env\
   |_hexapod.py -> hexapod class for simulation in pybullet\
   |_motor.py -> accurate model for simulation\
