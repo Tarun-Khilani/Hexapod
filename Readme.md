@@ -8,6 +8,7 @@ This folder contains
 └── hexapod  
     ├── body  
     │   ├── hexapod.urdf  
+    │   ├── hexapod_final.urdf
     │   ├── new_parts5  
     │   │   ├── base1.dae  
     │   │   ├── base2.dae  
