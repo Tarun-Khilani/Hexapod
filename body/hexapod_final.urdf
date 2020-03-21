@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<robot name="Hexapod_1">
+
+	<material name="Blue">
+	   	<color rgba="0 0 0.4 1.0"/>
+	</material>
+
+	<material name="White">
+        <color rgba="0.96 0.94 0.81 1.0"/>
+    </material>
+
+	<link name="base1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/base1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 0"/>
+			<material name="White"/>
+		</visual>
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/base2.dae"/>
+			</geometry>
+			<origin xyz="0 0 0.041" rpy="1.57 0 0"/>
+			<material name="White"/>
+		</visual>
+
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/base1.dae"/>
+			</geometry>
+			<origin rpy="1.57 0 0"/>
+		</collision>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/base2.dae"/>
+			</geometry>
+			<origin xyz="0 0 0.041" rpy="1.57 0 0"/>
+		</collision>
+		
+		<inertial>
+			<mass value ="0.198"/>
+			<inertia ixx="4.296e-8" ixy="0" ixz="0" iyy="1.493e-7" iyz="0" izz="1.063e-7"/>
+		</inertial>
+	</link>
+
+	<link name="motor1_1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+	<link name="motor2_1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+	<link name="motor3_1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+	<link name="motor4_1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+	<link name="motor5_1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+	<link name="motor6_1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+
+
+
+	<link name="motor1_2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 5.4977"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 5.4977"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+
+	<link name="motor2_2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+
+	<link name="motor3_2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+
+	<link name="motor4_2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 -0.785"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 -0.785"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+
+	<link name="motor5_2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+
+	<link name="motor6_2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/motor1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
+		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
+	</link>
+
+
+
+	<link name="joint1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 3.9269"/>
+			<material name="White"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 3.9269"/>
+		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
+	</link>
+
+	<link name="joint2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 -1.57"/>
+			<material name="White"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 -1.57"/>
+		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
+	</link>
+
+	<link name="joint3">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 -0.785"/>
+			<material name="White"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 -0.785"/>
+		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
+	</link>
+
+	<link name="joint4">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 0.785"/>
+			<material name="White"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 0.785"/>
+		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
+	</link>
+
+	<link name="joint5">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 1.57"/>
+			<material name="White"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 1.57"/>
+		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
+	</link>
+
+	<link name="joint6">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 2.356"/>
+			<material name="White"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/joint1.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 -0.698 2.356"/>
+		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
+	</link>
+
+
+
+	<link name="leg1">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor456.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.9198 0.785"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor456.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.9198 0.785"/>
+		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
+	</link>
+
+	<link name="leg2">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor456.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.9198 1.57"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor456.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.9198 1.57"/>
+		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
+	</link>
+
+	<link name="leg3">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor456.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.9198 2.356"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor456.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.9198 2.356"/>
+		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
+	</link>
+
+	<link name="leg4">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor123.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.22 0.7853"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor123.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.22 0.7853"/>
+		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
+	</link>
+
+	<link name="leg5">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor123.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.22 1.572"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor123.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.22 1.572"/>
+		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
+	</link>
+
+	<link name="leg6">
+		<visual>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor123.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.22 2.356"/>
+			<material name="Blue"/>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="C:/Users/tarun/Documents/Projects/Hexapod/Mini_Files/Mini Project-II/Review-1/Hexapod cad/hexapod-robot-1.snapshot.1/new_parts5/Legmotor123.dae"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 1.22 2.356"/>
+		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
+	</link>
+
+
+
+	<joint name="base_motor1_1" type="revolute">
+		<parent link="base1"/>
+		<child link="motor1_1"/>
+		<origin xyz="-0.0875 -0.0505 0.044" rpy="0 0 0"/>
+		<axis xyz="0 0 -1"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="base_motor2_1" type="revolute">
+		<parent link="base1"/>
+		<child link="motor2_1"/>
+		<origin xyz="0 -0.07 0.044" rpy="0 0 0"/>
+		<axis xyz="0 0 -1"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="base_motor3_1" type="revolute">
+		<parent link="base1"/>
+		<child link="motor3_1"/>
+		<origin xyz="0.088 -0.05091 0.044" rpy="0 0 0"/>
+		<axis xyz="0 0 -1"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="base_motor4_1" type="revolute">
+		<parent link="base1"/>
+		<child link="motor4_1"/>
+		<origin xyz="0.088 0.05091 0.044" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="base_motor5_1" type="revolute">
+		<parent link="base1"/>
+		<child link="motor5_1"/>
+		<origin xyz="0 0.07 0.044" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="base_motor6_1" type="revolute">
+		<parent link="base1"/>
+		<child link="motor6_1"/>
+		<origin xyz="-0.0875 0.0505 0.044" rpy="0 0 0"/>
+		<axis xyz="0 0 1"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+
+
+
+	<joint name="motor1_1_motor1_2" type="fixed">
+		<parent link="motor1_1"/>
+		<child link="motor1_2"/>
+		<origin xyz="-0.01298 -0.029084 -0.0152" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="motor2_1_motor2_2" type="fixed">
+		<parent link="motor2_1"/>
+		<child link="motor2_2"/>
+		<origin xyz="0.012 -0.03 -0.0152" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="motor3_1_motor3_2" type="fixed">
+		<parent link="motor3_1"/>
+		<child link="motor3_2"/>
+		<origin xyz="0.02906 -0.013169 -0.0152" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="motor4_1_motor4_2" type="fixed">
+		<parent link="motor4_1"/>
+		<child link="motor4_2"/>
+		<origin xyz="0.022064 0.005741 -0.0152" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="motor5_1_motor5_2" type="fixed">
+		<parent link="motor5_1"/>
+		<child link="motor5_2"/>
+		<origin xyz="0.012 0.02 -0.0152" rpy="0 0 0"/>
+	</joint>
+
+	<joint name="motor6_1_motor6_2" type="fixed">
+		<parent link="motor6_1"/>
+		<child link="motor6_2"/>
+		<origin xyz="-0.005086 0.022207 -0.0152" rpy="0 0 0"/>
+	</joint>
+
+
+
+
+	<joint name="motor1_2_joint1" type="revolute">
+		<parent link="motor1_2"/>
+		<child link="joint1"/>
+		<axis xyz="-1 1 0"/>
+		<origin xyz="-0.019406 0.027138 -0.008358" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.885" upper="0.760" velocity="100"/>
+	</joint>
+
+	<joint name="motor2_2_joint2" type="revolute">
+		<parent link="motor2_2"/>
+		<child link="joint2"/>
+		<axis xyz="-1 0 0"/>
+		<origin xyz="-0.033041 0.005032 -0.008358" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="motor3_2_joint3" type="revolute">
+		<parent link="motor3_2"/>
+		<child link="joint3"/>
+		<axis xyz="-1 -1 0"/>
+		<origin xyz="-0.027087 -0.019871 -0.008358" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="motor4_2_joint4" type="revolute">
+		<parent link="motor4_2"/>
+		<child link="joint4"/>
+		<axis xyz="1 -1 0"/>
+		<origin xyz="-0.020091 0.027299 -0.008358" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="motor5_2_joint5" type="revolute">
+		<parent link="motor5_2"/>
+		<child link="joint5"/>
+		<axis xyz="1 0 0"/>
+		<origin xyz="-0.033041 0.004968 -0.008358" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="motor6_2_joint6" type="revolute">
+		<parent link="motor6_2"/>
+		<child link="joint6"/>
+		<axis xyz="1 1 0"/>
+		<origin xyz="-0.0273 -0.020261 -0.008358" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+
+
+
+
+	<joint name="joint1_leg1" type="revolute">
+		<parent link="joint1"/>
+		<child link="leg1"/>
+		<axis xyz="-1 1 0"/>
+		<origin xyz="-0.042462 -0.040337 0.049127" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="joint2_leg2" type="revolute">
+		<parent link="joint2"/>
+		<child link="leg2"/>
+		<axis xyz="-1 0 0"/>
+		<origin xyz="-0.00158 -0.058637 0.049127" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="joint3_leg3" type="revolute">
+		<parent link="joint3"/>
+		<child link="leg3"/>
+		<axis xyz="-1 -1 0"/>
+		<origin xyz="0.040529 -0.042293 0.049127" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="joint4_leg4" type="revolute">
+		<parent link="joint4"/>
+		<child link="leg4"/>
+		<axis xyz="1 -1 0"/>
+		<origin xyz="0.040529 0.042293 0.049127" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="joint5_leg5" type="revolute">
+		<parent link="joint5"/>
+		<child link="leg5"/>
+		<axis xyz="1 0 0"/>
+		<origin xyz="-0.00158 0.058637 0.049127" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+	<joint name="joint6_leg6" type="revolute">
+		<parent link="joint6"/>
+		<child link="leg6"/>
+		<axis xyz="1 1 0"/>
+		<origin xyz="-0.042462 0.040337 0.049127" rpy="0 0 0"/>
+		<limit effort="100" lower="-0.785" upper="0.785" velocity="100"/>
+	</joint>
+
+
+</robot>
