@@ -9,12 +9,10 @@ p.setGravity(0,0,-10)
 planeId = p.loadURDF("plane.urdf")
 cubeStartPos = [0,0,1]
 cubeStartOrientation = p.getQuaternionFromEuler([0,0,0])
-boxId = p.loadURDF("/media/vaibhav/New Volume/ML/Mini Project-II/review2/hexapod/hexapod.urdf",cubeStartPos, cubeStartOrientation)
+boxId = p.loadURDF("/home/vaibhav/tensorflow1_gpu/lib/python3.5/site-packages/pybullet_envs/hexapod/body/hexapod.urdf",cubeStartPos, cubeStartOrientation)
 num_joints = p.getNumJoints(boxId)
 #print(p.getJointInfo(boxId,-1)[0],p.getJointInfo(boxId,-1)[1].decode('UTF-8'))
-for i in range(num_joints):
-  #print(p.getJointInfo(boxId,i)[0],p.getJointInfo(boxId,i)[1].decode('UTF-8'))
-  name = p.getJointInfo(boxId,i)[1].decode('UTF-8')
-  if pattern.match(name):
-    print(p.getJointInfo(boxId,i)[0])
+for i in range(100000):
+  p.stepSimulation()
+  time.sleep(1./240.)
 p.disconnect()
