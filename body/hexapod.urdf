@@ -1,116 +1,162 @@
 <?xml version="1.0"?>
 <robot name="Hexapod_1">
 
+	<material name="Blue">
+	   	<color rgba="0 0 0.4 1.0"/>
+	</material>
+
+	<material name="White">
+        <color rgba="0.96 0.94 0.81 1.0"/>
+    </material>
+
 	<link name="base1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/base1.dae"/>
+				<mesh filename="new_parts5//base1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 0"/>
+			<material name="White"/>
 		</visual>
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/base2.dae"/>
+				<mesh filename="new_parts5//base2.dae"/>
 			</geometry>
 			<origin xyz="0 0 0.041" rpy="1.57 0 0"/>
+			<material name="White"/>
 		</visual>
+
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/base1.dae"/>
+				<mesh filename="new_parts5//base1.dae"/>
 			</geometry>
 			<origin rpy="1.57 0 0"/>
 		</collision>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/base2.dae"/>
+				<mesh filename="new_parts5//base2.dae"/>
 			</geometry>
 			<origin xyz="0 0 0.041" rpy="1.57 0 0"/>
 		</collision>
+		
+		<inertial>
+			<mass value ="0.198"/>
+			<inertia ixx="4.296e-8" ixy="0" ixz="0" iyy="1.493e-7" iyz="0" izz="1.063e-7"/>
+		</inertial>
 	</link>
 
 	<link name="motor1_1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 	<link name="motor2_1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 	<link name="motor3_1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 	<link name="motor4_1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 2.356"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 	<link name="motor5_1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 3.14"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 	<link name="motor6_1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor.dae"/>
+				<mesh filename="new_parts5//motor.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="1.57 0 -2.321"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 
 
@@ -118,91 +164,121 @@
 	<link name="motor1_2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 5.4977"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 5.4977"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 
 	<link name="motor2_2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 
 	<link name="motor3_2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 
 	<link name="motor4_2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 -0.785"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 -0.785"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 
 	<link name="motor5_2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 
 	<link name="motor6_2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/motor1.dae"/>
+				<mesh filename="new_parts5//motor1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="-1.57 1.57 0.785"/>
 		</collision>
+		<inertial>
+			<mass value ="0.055"/>
+			<inertia ixx="2.410e-9" ixy="0" ixz="0" iyy="3.326e-9" iyz="0" izz="4.492e-9"/>
+		</inertial>
 	</link>
 
 
@@ -210,91 +286,121 @@
 	<link name="joint1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 3.9269"/>
+			<material name="White"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 3.9269"/>
 		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
 	</link>
 
 	<link name="joint2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 -1.57"/>
+			<material name="White"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 -1.57"/>
 		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
 	</link>
 
 	<link name="joint3">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 -0.785"/>
+			<material name="White"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 -0.785"/>
 		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
 	</link>
 
 	<link name="joint4">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 0.785"/>
+			<material name="White"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 0.785"/>
 		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
 	</link>
 
 	<link name="joint5">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 1.57"/>
+			<material name="White"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 1.57"/>
 		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
 	</link>
 
 	<link name="joint6">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 2.356"/>
+			<material name="White"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/joint1.dae"/>
+				<mesh filename="new_parts5//joint1.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 -0.698 2.356"/>
 		</collision>
+		<inertial>
+			<mass value ="0.015"/>
+			<inertia ixx="1.611e-10" ixy="0" ixz="0" iyy="4.221e-9" iyz="0" izz="4.375e-9"/>
+		</inertial>
 	</link>
 
 
@@ -302,91 +408,121 @@
 	<link name="leg1">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor456.dae"/>
+				<mesh filename="new_parts5//Legmotor456.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.9198 0.785"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor456.dae"/>
+				<mesh filename="new_parts5//Legmotor456.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.9198 0.785"/>
 		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
 	</link>
 
 	<link name="leg2">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor456.dae"/>
+				<mesh filename="new_parts5//Legmotor456.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.9198 1.57"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor456.dae"/>
+				<mesh filename="new_parts5//Legmotor456.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.9198 1.57"/>
 		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
 	</link>
 
 	<link name="leg3">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor456.dae"/>
+				<mesh filename="new_parts5//Legmotor456.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.9198 2.356"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor456.dae"/>
+				<mesh filename="new_parts5//Legmotor456.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.9198 2.356"/>
 		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
 	</link>
 
 	<link name="leg4">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor123.dae"/>
+				<mesh filename="new_parts5//Legmotor123.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.22 0.7853"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor123.dae"/>
+				<mesh filename="new_parts5//Legmotor123.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.22 0.7853"/>
 		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
 	</link>
 
 	<link name="leg5">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor123.dae"/>
+				<mesh filename="new_parts5//Legmotor123.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.22 1.572"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor123.dae"/>
+				<mesh filename="new_parts5//Legmotor123.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.22 1.572"/>
 		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
 	</link>
 
 	<link name="leg6">
 		<visual>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor123.dae"/>
+				<mesh filename="new_parts5//Legmotor123.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.22 2.356"/>
+			<material name="Blue"/>
 		</visual>
 		<collision>
 			<geometry>
-				<mesh filename="new_parts5/Legmotor123.dae"/>
+				<mesh filename="new_parts5//Legmotor123.dae"/>
 			</geometry>
 			<origin xyz="0 0 0" rpy="0 1.22 2.356"/>
 		</collision>
+		<inertial>
+			<mass value ="0.076"/>
+			<inertia ixx="1.875e-8" ixy="-2.011e-10" ixz="5.887e-10" iyy="1.937e-8" iyz="1.010e-9" izz="3.191e-9"/>
+		</inertial>
 	</link>
 
 
