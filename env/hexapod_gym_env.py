@@ -433,15 +433,15 @@ class HexapodGymEnv(gym.Env):
     return reward
 
   def _termination(self):
-    postion = self.hexapod.GetBasePosition()
-    distance = math.sqrt(position[0]**2 + postion[1]**2)
+    position = self.hexapod.GetBasePosition()
+    distance = math.sqrt(position[0]**2 + position[1]**2)
     return self._is_fallen() or distance > self._distance_limit
 
   def _is_fallen(self):
     """
     Determine wheter the hexapod has fallen or not
     """
-    orientation = self.hexapod.GetBasePosition()
+    orientation = self.hexapod.GetBaseOrientation()
     rot_matrix = pybullet.getMatrixFromQuaternion(orientation)
     local_up_vec = rot_matrix[6:]
     pos = self.hexapod.GetBasePosition()
