@@ -79,7 +79,7 @@ class MotorModel(object):
     current_magnitude = np.absolute(current)
 
     actual_torque = np.interp( current_magnitude, self._current_table, self._torque_table)
-    actual_torque = np.multiply(accurate_torque, current_sign)
+    actual_torque = np.multiply(actual_torque, current_sign)
 
     return actual_torque, observed_torque
 
