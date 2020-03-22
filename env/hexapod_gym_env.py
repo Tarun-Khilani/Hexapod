@@ -416,7 +416,7 @@ class HexapodGymEnv(gym.Env):
   def _reward(self):
     current_base_position = self.hexapod.GetBasePosition()
     forward_reward = current_base_position[0] - self._last_base_position[0]
-    forward_reward = min(forward_reward, forward_reward_cap)
+    forward_reward = min(forward_reward, self._forward_reward_cap)
 
     drift_reward = -abs(current_base_position[1] - self._last_base_position[1])
 
