@@ -423,7 +423,7 @@ class HexapodGymEnv(gym.Env):
     orientation = self.hexapod.GetBaseOrientation()
     rot_matrix = pybullet.getMatrixFromQuaternion(orientation)
     local_up_vec = rot_matrix[6:]
-    shake_reward = -abs(np.dot(np.asarray([11,0]), np.asarray(local_up_vec)))
+    shake_reward = -abs(np.dot(np.asarray([1,1,0]), np.asarray(local_up_vec)))
     energy_reward = -np.abs(np.dot(self.hexapod.GetMotorTorques(),self.hexapod.GetMotorVelocities()))*self._time_step
 
     objectives = [forward_reward, energy_reward, drift_reward, shake_reward]
