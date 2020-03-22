@@ -7,7 +7,7 @@ import collections
 import copy
 import math
 import re
-import motor
+from pybullet_envs.hexapod.env import motor
 import numpy as np
 
 INIT_POSITION = [0,0,0.2]
@@ -106,8 +106,8 @@ class Hexapod(object):
     self._accurate_motor_model_enabled = accurate_motor_model_enabled
     self._pd_control_enabled = pd_control_enabled
     self._remove_default_joint_damping = remove_default_joint_damping
-    self._obervation_history = collections.deque(maxlen = 100)
-    self._control_obervation = []
+    self._observation_history = collections.deque(maxlen = 100)
+    self._control_observation = []
     self._base_link_id = [-1]
     self._base_motor_link_ids = []
     self._motor_motor_link_ids = []
@@ -154,8 +154,8 @@ class Hexapod(object):
     Receive observation from sensor noise
     This function is called once per step and update observation history
     """
-    self._obervation_history.appendleft(self._GetTrueObservation())
-    self._control_obervation = self._GetControlObservation()
+    self._observation_history.appendleft(self._GetTrueObservation())
+    self._control_observation = self._GetControlObservation()
 
   def _GetTrueObservation(self):
     observation = []
@@ -252,7 +252,7 @@ class Hexapod(object):
     Get the torque applied on eighteen motors
     """
     if self._accurate_motor_model_enabled or self._pd_control_enabled:
-      return _observed_motor_torques
+      return self._observed_motor_torques
     else:
       motor_torques = [
       self._pybullet_client.getJointState(self.hexapod, motor_id)[3] for motor_id in self._motor_id_list
@@ -294,17 +294,17 @@ class Hexapod(object):
     Returns:
     observation : Observation observed latency seconds ago
     """
-    if latency <= 0 or self._obervation_history == 1:
-      observation = self._obervation_history[0]
+    if latency <= 0 or len(self._observation_history) == 1:
+      observation = self._observation_history[0]
     else:
       n_steps_ago = int(latency/self.time_step)
-      if n_steps_ago + 1 >= len(self._obervation_history):
-        return self._obervation_history[-1]
+      if n_steps_ago + 1 >= len(self._observation_history):
+        return self._observation_history[-1]
       remaining_latency = latency - n_steps_ago * self.time_step
       blend_alpha = remaining_latency / self.time_step
-      observation = ( (1.0 - blend_alpha)*np.array(self._obervation_history[n_steps_ago]) + blend_alpha * np.array(
-        self._obervation_history[n_steps_ago+1]) )
-      return observation
+      observation = ( (1.0 - blend_alpha)*np.array(self._observation_history[n_steps_ago]) + blend_alpha * np.array(
+        self._observation_history[n_steps_ago+1]) )
+    return observation
 
 #This function is used by hexapod_gym_env.py
   def Reset(self, reload_urdf = True, default_motor_angles = None, reset_time = 3.0):
@@ -323,7 +323,7 @@ class Hexapod(object):
     else:
       init_position = INIT_POSITION
     if reload_urdf:
-      if self.self_collision_enabled:
+      if self._self_collision_enabled:
         self.hexapod = self._pybullet_client.loadURDF("%s/hexapod.urdf" %self._urdf_root,
           init_position, useFixedBase = self._on_rack,
           flags = self._pybullet_client.URDF_USE_SELF_COLLISION)
@@ -336,7 +336,7 @@ class Hexapod(object):
       self._BuildURDFIds()
       if self._remove_default_joint_damping:
         self._RemoveDefaultJointDamping()
-      self._BUildMotorIdList()
+      self._BuildMotorIdList()
       self._RecordMassInfoFromURDF()
       self._RecordInertiaInfoFromURDF()
       self._ResetPose()
@@ -352,7 +352,7 @@ class Hexapod(object):
 
 #NO IDEA WHY I M DOING THIS
     self._observation_history.clear()
-    if not self._torque_control_enabled and reset_time > 0.0:
+    if reset_time > 0.0:
       self.ReceiveObservation()
       for _ in range(100):
         self.ApplyAction([math.pi / 2] * self.num_motors)
@@ -430,19 +430,19 @@ class Hexapod(object):
     """
     
     self._base_motor_mass_urdf = []
-    for i in _base_motor_link_ids:
+    for i in self._base_motor_link_ids:
       self._base_motor_mass_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[0])
 
     self._motor_motor_mass_urdf = []
-    for i in _motor_motor_link_ids:
+    for i in self._motor_motor_link_ids:
       self._motor_motor_mass_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[0])
 
     self._motor_joint_mass_urdf = []
-    for i in _motor_joint_link_ids:
+    for i in self._motor_joint_link_ids:
       self._motor_joint_mass_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[0])
 
     self._joint_leg_masss_urdf = []
-    for i in _joint_leg_link_ids:
+    for i in self._joint_leg_link_ids:
       self._joint_leg_masss_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[0])
 
 
@@ -452,27 +452,27 @@ class Hexapod(object):
     """
     
     self._base_motor_inertia_urdf = []
-    for i in _base_motor_link_ids:
+    for i in self._base_motor_link_ids:
       self._base_motor_inertia_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[2])
 
     self._motor_motor_inertia_urdf = []
-    for i in _motor_motor_link_ids:
+    for i in self._motor_motor_link_ids:
       self._motor_motor_inertia_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[2])
 
     self._motor_joint_inertia_urdf = []
-    for i in _motor_joint_link_ids:
+    for i in self._motor_joint_link_ids:
       self._motor_joint_inertia_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[2])
 
     self._joint_leg_inertia_urdf = []
-    for i in _joint_leg_link_ids:
+    for i in self._joint_leg_link_ids:
       self._joint_leg_inertia_urdf.append(self._pybullet_client.getDynamicsInfo(self.hexapod,i)[2])
 
   def _ResetPose(self):
     """
     Reset the pose of hexapod
     """
-    for i in range(self._base_motor_link_ids):
-      _ResetPoseForLeg(i)
+    for i in self._base_motor_link_ids:
+      self._ResetPoseForLeg(i)
 
   def _ResetPoseForLeg(self,i):
     """
@@ -572,7 +572,7 @@ class Hexapod(object):
     Return the base orienation in euler angles with sensor noise and latency
     """
     delayed_orientation = np.array(
-      self._control_obervation[3 * self.num_motors : 3 * num_motors + 4])
+      self._control_observation[3 * self.num_motors : 3 * self.num_motors + 4])
     delayed_roll_pitch_yaw = self._pybullet_client.getEulerFromQuaternion(delayed_orientation)
     roll_pitch_yaw = self._AddSensorNoise(delayed_roll_pitch_yaw, self._observation_noise_stdev[3])
     return roll_pitch_yaw
@@ -582,7 +582,7 @@ class Hexapod(object):
     """
     Get the eighteen motor angles with sensor noise and latency mapped to [-pi,pi]
     """
-    motor_angles = self._AddSensorNoise(np.array(self._control_obervation[0:self.num_motors]),
+    motor_angles = self._AddSensorNoise(np.array(self._control_observation[0:self.num_motors]),
       self._observation_noise_stdev[0])
     return MapToMinusPiToPi(motor_angles)
 
@@ -592,7 +592,7 @@ class Hexapod(object):
     Get the eighteen motor velocities with sensor noise and latency
     """
     motor_velocities = self._AddSensorNoise(
-      np.array(self._control_obervation[self.num_motors: 2 * self.num_motors]),
+      np.array(self._control_observation[self.num_motors: 2 * self.num_motors]),
       self._observation_noise_stdev[1]
       )
     return motor_velocities
@@ -603,7 +603,7 @@ class Hexapod(object):
     Get all motor torques with sensor noise and latency
     """
     return self._AddSensorNoise(
-      np.array(self._control_obervation[2 * self.num_motors : 3 * self.num_motors]),
+      np.array(self._control_observation[2 * self.num_motors : 3 * self.num_motors]),
       self._observation_noise_stdev[2]
       )
 
@@ -621,7 +621,7 @@ class Hexapod(object):
     with sensor noise and latency
     """
     return self._AddSensorNoise(
-      np.array(self._control_obervation[3 * self.num_motors : 4:3 * self.num_motors + 7 ]),
+      np.array(self._control_observation[3 * self.num_motors + 4:3 * self.num_motors + 7 ]),
       self._observation_noise_stdev[4]
       )
 
@@ -724,7 +724,7 @@ class Hexapod(object):
 #-----------------------------------------------------------------------------------
 #--------------------------THIS PART NEED TO BE CHANGED-----------------------------
 #-----------------------------------------------------------------------------------
-
+'''
 
   def GetBaseMassesFromURDF(self):
     """Get the mass of the base from the URDF file."""
@@ -838,3 +838,4 @@ class Hexapod(object):
       self._pybullet_client.changeDynamics(self.quadruped,
                                            link_id,
                                            localInertiaDiagonal=motor_inertia)
+'''

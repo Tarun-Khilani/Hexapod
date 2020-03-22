@@ -17,8 +17,11 @@ import numpy as np
 import pybullet
 import pybullet_utils.bullet_client as bc
 import pybullet_data
-import body
-import hexapod, hexapod_logging, hexapod_logging_pb2, motor
+from pybullet_envs.hexapod import body
+from pybullet_envs.hexapod.env import hexapod
+from pybullet_envs.hexapod.env import hexapod_logging
+from pybullet_envs.hexapod.env import hexapod_logging_pb2
+from pybullet_envs.hexapod.env import motor
 from pkg_resources import parse_version
 
 NUM_MOTORS = 18
@@ -51,7 +54,7 @@ def get_urdf_root_path():
   urdf_root_path = os.path.join(parentdir,"body")
   return urdf_root_path
 
-class HexapodGymEnv(gym.env):
+class HexapodGymEnv(gym.Env):
   """
   The gym enviornment for hexapod
   It simulte the locomotion of hexapod robot. The state space include angle, velociry and 
@@ -199,8 +202,8 @@ class HexapodGymEnv(gym.env):
     observation_low = ( self._get_observation_lower_bound() - OBSERVATION_EPS )
     action_dim = NUM_MOTORS
     action_high = np.array([self._action_bound] * action_dim)
-    self.action_space = spaces.box(-action_high, action_high)
-    self.observation_space = spaces.box(observation_low, observation_high)
+    self.action_space = spaces.Box(-action_high, action_high)
+    self.observation_space = spaces.Box(observation_low, observation_high)
     self.viewer = None
     self._hard_reset = hard_reset
 
@@ -213,15 +216,15 @@ class HexapodGymEnv(gym.env):
     self._pybullet_client.configureDebugVisualizer(self._pybullet_client.COV_ENABLE_RENDERING, 0)
     if self._env_step_counter > 0:
       self.logging.save_episode(self._episode_proto)
-    self._episode_proto = self.hexapod_logging_pb2.HexapodEpisode()
-    hexapod_logging.preallocate_episode_proto(self._episode_proto,sef._num_steps_to_log)
+    self._episode_proto = hexapod_logging_pb2.HexapodEpisode()
+    hexapod_logging.preallocate_episode_proto(self._episode_proto,self._num_steps_to_log)
     if self._hard_reset:
       self._pybullet_client.resetSimulation()
       self._pybullet_client.setPhysicsEngineParameter(
         numSolverIterations = int(self._num_bullet_solver_iterations))
-      self._pybullet_client.setTimestep(self._time_step)
+      self._pybullet_client.setTimeStep(self._time_step)
       self._ground_id = self._pybullet_client.loadURDF("%s/plane.urdf" % pybullet_data.getDataPath())
-      if self.reflection:
+      if self._reflection:
         self._pybullet_client.changeVisualShape(self._ground_id, -1, rgbaColor = [1,1,1,0.8])
         self._pybullet_client.configureDebugVisualizer(
           self._pybullet_client.COV_ENABLE_PLANAR_REFLECTION, self._ground_id)
@@ -349,7 +352,7 @@ class HexapodGymEnv(gym.env):
     Get the upper bound for observation
     see GetObservation() for more info
     """
-    upper_bound = np.zero(self._get_observation_dimension())
+    upper_bound = np.zeros(self._get_observation_dimension())
     num_motors = self.hexapod.num_motors
     upper_bound[0:num_motors] = math.pi / 4 #joint angle
     upper_bound[num_motors: 2 * num_motors] = (motor.MOTOR_SPEED_LIMIT) #joint velocity
@@ -361,19 +364,19 @@ class HexapodGymEnv(gym.env):
     """
     Get the lower bound for observation
     """
-    lower_bound = _get_observation_upper_bound()
+    lower_bound = self._get_observation_upper_bound()
     num_motors = self.hexapod.num_motors
     lower_bound[0:num_motors] = -1*(math.pi / 4)
     return lower_bound
 
 
-  def _get_observation_dimension():
+  def _get_observation_dimension(self):
     """
     Get the length of observation list
     """
     return len(self._get_observation())
 
-  def _get_observation():
+  def _get_observation(self):
     """
     Get the observation of env with noise and latency
     hexapod class contains history of true observation and based on latency 
@@ -389,7 +392,7 @@ class HexapodGymEnv(gym.env):
     self._true_observation = observation
     return self._true_observation
 
-  def _get_true_observation():
+  def _get_true_observation(self):
     """
     Get the true observation of env (values without sensor noise and latency)
     """
@@ -477,9 +480,9 @@ class HexapodGymEnv(gym.env):
     """
     return base orientation in quaternion
     """
-  return np.array(self._observation[BASE_ORIENTATION_OBSERVATION_INDEX:])
+    return np.array(self._observation[BASE_ORIENTATION_OBSERVATION_INDEX:])
 
-  if parse_version(gym.__verison__) < parse_version('0.9.6'):
+  if parse_version(gym.__version__) < parse_version('0.9.6'):
     _render = render
     _reset = reset
     _seed = seed

@@ -6,8 +6,8 @@ hexapod_logging.proto for more information. The episode_proto is updated per
 time step by the enviornment and is saved into disk.
 """
 import datetime, os, time
-import tensorflow.compat.v1 as tf
-import hexapod_logging_pb2
+import tensorflow as tf
+from pybullet_envs.hexapod.env import hexapod_logging_pb2
 
 NUM_MOTORS = 18
 
