@@ -109,7 +109,7 @@ def train(config, env_processes):
     config.value_optimizer = getattr(tf.train, config.value_optimizer)
   if config.update_every % config.num_agents:
     tf.logging.warn('Number of agents should divide episodes per update.')
-  with tf.device('/cpu:0'):
+  with tf.device('/gpu:0'):
     batch_env = utility.define_batch_env(lambda: _create_environment(config), config.num_agents,
                                          env_processes)
     graph = utility.define_simulation_graph(batch_env, config.algorithm, config)

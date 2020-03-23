@@ -31,9 +31,9 @@ def default():
   """Default configuration for PPO."""
   # General
   algorithm = ppo.PPOAlgorithm
-  num_agents = 10
+  num_agents = 25
   eval_episodes = 25
-  use_gpu = False
+  use_gpu = True
   # Network
   network = networks.ForwardGaussianPolicy
   weight_summaries = dict(all=r'.*', policy=r'.*/policy/.*', value=r'.*/value/.*')
@@ -132,11 +132,12 @@ def hexapod():
   locals().update(default())
   randomizer = None
   env = functools.partial(hexapod_gym_env.HexapodGymEnv,
-                          accurate_motor_model_enabled = True,
-                          pd_control_enabled = True,
+                          accurate_motor_model_enabled = False,
+                          pd_control_enabled = False,
                           motor_overheat_protection = True,
                           env_randomizer = randomizer,
                           render = False)
   max_length = 1000
   steps = 3e7
+  num_agents = 2
   return locals()
