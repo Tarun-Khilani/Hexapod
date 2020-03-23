@@ -356,7 +356,7 @@ class Hexapod(object):
     if reset_time > 0.0:
       self.ReceiveObservation()
       for _ in range(100):
-        self.ApplyAction([math.pi / 2] * self.num_motors)
+        self.ApplyAction([0] * self.num_motors)
         self._pybullet_client.stepSimulation()
         self.ReceiveObservation()
       if default_motor_angles is not None:

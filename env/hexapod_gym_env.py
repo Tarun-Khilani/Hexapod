@@ -446,7 +446,7 @@ class HexapodGymEnv(gym.Env):
     local_up_vec = rot_matrix[6:]
     pos = self.hexapod.GetBasePosition()
 #NUMERICAL VALUE NEED TO BE CHANGED
-    return np.dot(np.asarray([0,0,1]), np.asarray(local_up_vec)) < 0.85 or pos[1] < 0.13
+    return np.dot(np.asarray([0,0,1]), np.asarray(local_up_vec)) < 0.85 or pos[1] < 0.051
 
   def get_objectives(self):
     return self._objectives
