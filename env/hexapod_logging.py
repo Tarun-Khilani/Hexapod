@@ -57,16 +57,16 @@ def update_episode_proto(episode_proto, hexapod, action, step):
   step_log = episode_proto.state_action[step]
   step_log.info_valid = hexapod.IsObservationValid()
   time_in_seconds = hexapod.GetTimeSinceReset()
-  step_log.time.seconds = time_in_seconds
+  step_log.time.seconds = int(time_in_seconds)
   step_log.time.nanos = int((time_in_seconds - int(time_in_seconds)) * 1e9)
 
   motor_angles = hexapod.GetMotorAngles()
   motor_velocities = hexapod.GetMotorVelocities()
   motor_torques = hexapod.GetMotorTorques()
   for i in range(hexapod.num_motors):
-    step_log.motor_states[i].angle = motor_angles
-    step_log.motor_states[i].velocity = motor_velocities
-    step_log.motor_states[i].torque = motor_torques
+    step_log.motor_states[i].angle = motor_angles[i]
+    step_log.motor_states[i].velocity = motor_velocities[i]
+    step_log.motor_states[i].torque = motor_torques[i]
     step_log.motor_states[i].action = action[i]
 
   _update_base_state(step_log.base_position, hexapod.GetBasePosition())

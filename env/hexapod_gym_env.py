@@ -190,7 +190,7 @@ class HexapodGymEnv(gym.Env):
     self._env_randomizer = convert_to_list(env_randomizer) if env_randomizer else []
     self._episode_proto = hexapod_logging_pb2.HexapodEpisode()
     if self._is_render:
-      self._pybullet_client = bc.BulletClient(connection_model = pybullet.GUI)
+      self._pybullet_client = bc.BulletClient(connection_mode = pybullet.GUI)
     else:
       self._pybullet_client = bc.BulletClient()
     if self._urdf_version is None:
