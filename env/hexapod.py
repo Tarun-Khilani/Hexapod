@@ -184,7 +184,7 @@ class Hexapod(object):
     if self._motor_velocity_limit < np.inf:
       current_motor_angle = self.GetTrueMotorAngles()
       motor_command_max = current_motor_angle + self.time_step*self._motor_velocity_limit
-      motor_command_min = current_motor_angle + self.time_step*self._motor_velocity_limit
+      motor_command_min = current_motor_angle - self.time_step*self._motor_velocity_limit
       motor_commands = np.clip(motor_commands, motor_command_max, motor_command_min)
 
     if motor_kps is None:
@@ -195,6 +195,7 @@ class Hexapod(object):
     if self._accurate_motor_model_enabled or self._pd_control_enabled:
       q, qdot = self._GetPDObservation()
       qdot_true = self.GetTrueMotorVelocities()
+
       if self._accurate_motor_model_enabled:
         actual_torque, observed_torque = self._motor_model.convert_to_torque(
           motor_commands, q, qdot, qdot_true, motor_kps, motor_kds)
@@ -400,7 +401,7 @@ class Hexapod(object):
       elif _MOTOR_JOINT_PATTERN.match(joint_name):
         self._motor_joint_link_ids.append(joint_id)
 
-      else:
+      elif _JOINT_LEG_PATTERN.match(joint_name):
         self._joint_leg_link_ids.append(joint_id)
 
       self._base_motor_link_ids.sort()
